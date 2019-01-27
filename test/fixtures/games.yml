@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  home_score: 1
+  visitor_score: 1
+  game_date: 2019-01-27
+  coach: one
+
+two:
+  name: MyString
+  home_score: 1
+  visitor_score: 1
+  game_date: 2019-01-27
+  coach: two

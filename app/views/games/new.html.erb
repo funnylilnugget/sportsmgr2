@@ -1,0 +1,17 @@
+<div>
+  <h1>Create A New Game</h1>
+
+  <%= form_for(@game) do |g|%>
+    <h3>Game Name:</h3>
+    <%= g.text_field :name, placeholder: "Game Name" %><br>
+
+    <h3>Game Date:</h3>
+    <%= g.date_field :game_date %><br>
+
+    <h3>Team:</h3>
+    <%= g.collection_select(:teams, Team.all, :id, :name) %>
+
+    <%= g.submit 'Create Game' %>
+
+  <% end %>
+</div>

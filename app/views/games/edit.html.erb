@@ -1,0 +1,19 @@
+<div>
+  <h1>Create A New Game</h1>
+
+  <%= form_for(@game) do |g|%>
+    <h3>Game Name:</h3>
+    <%= g.text_field :name, placeholder: "Game Name" %><br>
+
+    <h3>Game Date:</h3>
+    <%= g.date_field :game_date %><br>
+
+    <h3>Home Team Score:</h3>
+    <%= g.number_field :home_score %><br>
+
+    <h3>Opposing Team Score:</h3>
+    <%= g.number_field :visitor_score %><br>
+    <%= g.submit 'Create Game' %>
+
+  <% end %>
+</div>

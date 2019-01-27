@@ -1,0 +1,23 @@
+<div>
+  <h1>Coach Sign Up</h1>
+
+  <%= form_for(@coach) do |c|%>
+    <h3>First Name:</h3>
+    <%= c.text_field :first_name, placeholder: "First Name" %><br>
+
+    <h3>Last Name:</h3>
+    <%= c.text_field :last_name, placeholder: "Last Name" %><br>
+
+    <h3>Email:</h3>
+    <%= c.email_field :email, placeholder: "Email"%><br>
+
+    <h3>Password:</h3>
+    <%= c.password_field :password, placeholder: "minimum of 8 characters" %><br>
+
+    <h3>Re-enter Password:</h3>
+    <%= c.password_field :password_confirmation, placeholder: "enter password again"%><br><br>
+
+    <%= c.submit 'Sign Up' %>
+
+  <% end %>
+</div>
