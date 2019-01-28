@@ -20,6 +20,8 @@ class PlayersController < ApplicationController
   if @player.valid?
     @player.save
     redirect_to players_path
+  else
+    p @player.errors.messages
   end
 end
 

@@ -41,21 +41,21 @@ ActiveRecord::Schema.define(version: 2019_01_27_203622) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "players_teams", force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_players_teams_on_player_id"
+    t.index ["team_id"], name: "index_players_teams_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_teams_on_game_id"
-  end
-
-  create_table "teams_players", force: :cascade do |t|
-    t.integer "team_id"
-    t.integer "player_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_teams_players_on_player_id"
-    t.index ["team_id"], name: "index_teams_players_on_team_id"
   end
 
 end
