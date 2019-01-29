@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sportsmgr2</title>
+    <title>SportsMGR</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,8 +9,9 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
+    <div>
     <%= render 'layouts/topnav' %>
     <%= yield %>
-
+</div>
   </body>
 </html>

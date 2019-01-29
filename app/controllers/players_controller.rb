@@ -26,12 +26,20 @@ class PlayersController < ApplicationController
 end
 
 
-def update
+  def update
         @player = Player.find(params[:id])
-        if @player.update(player_params)
+      if @player.update(player_params)
         redirect_to players_path
       end
-    end
+  end
+
+  def destroy
+    @player = Player.find(params[:id])
+    respond_to do |format|
+    format.js
+  end
+  @player.destroy
+  end
 
   private
 

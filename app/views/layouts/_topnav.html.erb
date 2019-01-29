@@ -4,10 +4,18 @@
     <img src="/assets/sportsMGR_transparent.png" alt="Company Logo">
   </div>
 
-  <a href="#contact">Contact</a>
-  <a href="#news">Home</a>
+  <%= link_to "Home", root_path %>
 
   <div class="topnav-right">
+    <% if session[:user_id] == nil %>
+      <div>
+        <%= link_to "Login", login_path, class: "button" %>
+        <%= link_to "Create Account", new_coach_path, class: "button" %>
+      </div>
+    <% else %>
+    <div>
+    <%= link_to "Logout", logout_path %>
   </div>
-
+  <% end %>
+</div>
 </div>

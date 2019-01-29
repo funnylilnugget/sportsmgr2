@@ -1,6 +1,10 @@
-<%= link_to "Create Team", new_team_path%><br>
-<%= link_to "Create Game", new_game_path%><br>
-
+<% if session[:user_id] == nil %>
+  <div>
+<h2>
+  Welcome to sportsMGR, your soon to be, eventual one stop place for managing your sports team.
+  </h2>
+  </div>
+<% else %>
 
 <div id="app">
 <h1>Dashboard</h2>
@@ -23,3 +27,5 @@
 </script>
 <script src="https://unpkg.com/vue@2.4.2"></script>
 <%= javascript_pack_tag 'application' %>
+
+<% end %>
