@@ -6,5 +6,6 @@ class Player < ApplicationRecord
   validates :password, presence: true, confirmation: true, length: { minimum: 8 }, :on => :create
 
 has_and_belongs_to_many :teams
+has_many :stat_try
 
 end
