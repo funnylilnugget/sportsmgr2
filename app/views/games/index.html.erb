@@ -1,1 +1,24 @@
 <%= link_to "Create Game", new_game_path%><br>
+
+<h2>Game List</h2>
+
+<table>
+  <tr>
+    <th>Game Name:</th>
+    <th>Game Date:</th>
+    <th>Home Team Score:</th>
+    <th>Opposing Team Score:</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+    <% @game.each do |g| %>
+      <tr id="<%=g.id%>">
+        <td><%= g.name %></td>
+        <td><%= g.game_date %></td>
+        <td><center><%= g.home_score %></center></td>
+        <td><center><%= g.visitor_score %></center></td>
+        <td><a href="/games/<%= g.id %>/edit">Edit</a></td>
+        <td><%= link_to "Delete", player_path(g.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          </tr>
+        <% end %>
+      </table>

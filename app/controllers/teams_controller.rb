@@ -18,10 +18,8 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     if @team.valid?
-      # @game = Game.find(1)
-      # @game.teams << @team
       @team.save
-      redirect_to teams_path
+      redirect_to root_path
     else
       p @team.errors.messages
       end

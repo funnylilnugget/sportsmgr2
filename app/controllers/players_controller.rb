@@ -19,7 +19,7 @@ class PlayersController < ApplicationController
   @player = Player.new(player_params)
   if @player.valid?
     @player.save
-    redirect_to players_path
+    redirect_to root_path
   else
     p @player.errors.messages
   end

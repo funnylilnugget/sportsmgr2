@@ -1,1 +1,18 @@
     <%= link_to "Create Team", new_team_path%><br>
+
+    <h2>Team List</h2>
+
+    <table>
+      <tr>
+        <th>Team Name:</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+        <% @team.each do |t| %>
+          <tr id="<%=t.id%>">
+            <td><%= t.name %></td>
+            <td><a href="/teams/<%= t.id %>/edit">Edit</a></td>
+            <td><%= link_to "Delete", player_path(t.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+              </tr>
+            <% end %>
+          </table>
