@@ -150,7 +150,3 @@ table {
   background-color: white;
   padding: 10px;
 }
-
-.delete-icon {
-  background-image: url(/assets/remove-file.png);
-}

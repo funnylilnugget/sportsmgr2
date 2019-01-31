@@ -19,7 +19,9 @@
         <td><center><%= g.home_score %></center></td>
         <td><center><%= g.visitor_score %></center></td>
         <td><a href="/games/<%= g.id %>/edit"><img src="/assets/edit-button.png"></a></td>
-        <td><%= link_to "Delete", game_path(g.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <td><%= link_to game_path(g.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} do %>
+          <%= image_tag("/assets/remove-file.png") %>
+          <% end %></td>
           </tr>
         <% end %>
       </table>

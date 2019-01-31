@@ -16,7 +16,9 @@
         <td><%= p.first_name %></td>
         <td><%= p.last_name %></td>
         <td><a href="/players/<%= p.id %>/edit"><img src="/assets/edit-button.png"></a></td>
-        <td><%= link_to "Delete", player_path(p.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <td><%= link_to player_path(p.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} do %>
+          <%= image_tag("/assets/remove-file.png") %>
+          <% end %></td>
           </tr>
         <% end %>
       </table>
