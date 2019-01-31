@@ -1,26 +1,26 @@
 <br>
 
-    <center><%= link_to "Create Team", new_team_path%></center><br>
+<center><%= link_to "Create Team", new_team_path%></center><br>
 
-    <h2>Team List</h2>
+<h2>Team List</h2>
 <br>
-    <table align="center">
-      <tr>
-        <th>Team Name:</th>
-        <th>Player Name:</th>
-        <th>Edit</th>
-        <th>Delete</th>
+<table align="center">
+  <tr>
+    <th>Team Name:</th>
+    <th>Player Name:</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @team.each do |t| %>
+  <tr id="<%=t.id%>">
+    <td><%= t.name %></td>
+    <td><% t.players.each do |p| %>
+      <%=p.first_name%><br>
+      <%end%>
+      <td><a href="/teams/<%= t.id %>/edit"><img src="/assets/edit-button.png"></a></td>
+      <td><%= link_to team_path(t.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} do %>
+        <%= image_tag("/assets/remove-file.png") %>
+        <% end %></td>
       </tr>
-        <% @team.each do |t| %>
-          <tr id="<%=t.id%>">
-            <td><%= t.name %></td>
-            <td><% t.players.each do |p| %>
-                <%=p.first_name%><br>
-              <%end%>
-            <td><a href="/teams/<%= t.id %>/edit"><img src="/assets/edit-button.png"></a></td>
-            <td><%= link_to team_path(t.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} do %>
-              <%= image_tag("/assets/remove-file.png") %>
-              <% end %></td>
-              </tr>
-            <% end %>
-          </table>
+      <% end %>
+    </table>
