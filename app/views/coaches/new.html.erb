@@ -1,7 +1,10 @@
-<div>
-  <h1>Coach Sign Up</h1>
-
+<div class="tinted-image">
+  <br><h1>Coach Sign Up</h1><br>
+  <div class="grid-container">
+    <div></div>
+    <div class="card container" align="center">
   <%= form_for(@coach) do |c|%>
+
     <h3>First Name:</h3>
     <%= c.text_field :first_name, placeholder: "First Name" %><br>
 
@@ -16,8 +19,10 @@
 
     <h3>Re-enter Password:</h3>
     <%= c.password_field :password_confirmation, placeholder: "enter password again"%><br><br>
-
     <%= c.submit 'Sign Up' %>
-
-  <% end %>
+    <br><br>
+  </div>
+  <div></div>
 </div>
+  </div>
+  <% end %>
