@@ -1,7 +1,11 @@
 class PlayersController < ApplicationController
   def index
+    if logged_in?
     @player = Player.all
+  else
+    redirect_to root_path
   end
+end
 
   def edit
     @player = Player.find(params[:id])

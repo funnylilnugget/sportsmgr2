@@ -1,10 +1,8 @@
-<h1>Log In</h1>
 
 <div>
+  <h1>Coach Log In</h1>
   <div></div>
-
-  <div>
-    <div>
+  <div align="center">
       <%= form_for(:session, url: login_path) do |f| %>
 
       <h3><%= f.label :email %></h3>
@@ -15,7 +13,6 @@
       <br><br>
       <%= f.submit "Enter", class: "button" %>
       <br>
-    </div>
   </div>
   <div></div>
 </div>

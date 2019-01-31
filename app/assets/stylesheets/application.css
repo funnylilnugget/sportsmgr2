@@ -18,16 +18,19 @@
 .topnav {
   position: relative;
   background-color: #314C95;
-  overflow: hidden;
-  height: 90px;
-  width: 99vw;
+  height: 125px;
+  width: auto;
 }
 
+::-webkit-scrollbar {
+  display: none;
+
+}
 .topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 50px 16px;
   text-decoration: none;
   font-size: 30px;
 }
@@ -69,10 +72,9 @@
 
 
 body {
-  width: 100vw;
-  height: 100vh;
   font-family: 'NTR', sans-serif;
   background: #eee;
+  margin: 0;
 }
 
 h1 {
@@ -96,6 +98,8 @@ h1 {
   border: 1px solid #ddd;
   padding: 20px 20px;
   margin: 10px;
+}
+
   h2 {
     margin: 0;
     text-align: center;
@@ -104,4 +108,23 @@ h1 {
     margin: 10px;
     align-self: center;
   }
-}
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+/* ******** BACKGROUND IMAGE ********* */
+/* 
+.tinted-image {
+  background:
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    ),
+    url(/assets/rugby-background.jpg) no-repeat center center fixed;
+    background-size: cover;
+height: 100%;
+overflow: hidden;
+} */

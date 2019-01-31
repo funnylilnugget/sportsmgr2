@@ -1,6 +1,10 @@
 class CoachesController < ApplicationController
   def index
+    if logged_in?
     @coach = Coach.all
+  else
+    redirect_to root_path
+    end
   end
 
   def edit
@@ -23,14 +27,14 @@ class CoachesController < ApplicationController
   else
     p @coach.errors.messages
   end
-end
+  end
 
-def update
+  def update
         @coach = Coach.find(params[:id])
         if @coach.update(coach_params)
         redirect_to coaches_path
-      end
-    end
+        end
+  end
 
   private
 

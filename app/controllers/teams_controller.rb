@@ -1,6 +1,10 @@
 class TeamsController < ApplicationController
   def index
+    if logged_in?
     @team = Team.all
+  else
+    redirect_to root_path
+    end
   end
 
   def edit
@@ -22,14 +26,14 @@ class TeamsController < ApplicationController
       redirect_to root_path
     else
       p @team.errors.messages
-      end
     end
+  end
 
     def update
         @team = Team.find(params[:id])
         if @team.update(team_params)
         redirect_to teams_path
-      end
+        end
     end
 
   private

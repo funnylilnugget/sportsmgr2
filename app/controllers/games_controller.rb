@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
   def index
+    if logged_in?
     @game = Game.all
+  else
+    redirect_to root_path
+    end
   end
 
   def edit
@@ -24,24 +28,24 @@ class GamesController < ApplicationController
       redirect_to games_path
     else
       p @game.errors.messages
-      end
     end
+  end
 
     def update
         @game = Game.find(params[:id])
         if @game.update(game_update_params)
         redirect_to games_path
-      end
+        end
     end
 
   private
 
   def game_params
     params.require(:game).permit(:name, :game_date)
-    end
+  end
 
     def game_update_params
       params.require(:game).permit(:name, :game_date, :home_score, :visitor_score)
-      end
+    end
 
 end

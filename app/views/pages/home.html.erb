@@ -1,31 +1,33 @@
 <% if session[:user_id] == nil %>
+<div class="tinted-image">
   <div>
-<h1>
-  Welcome to sportsMGR, your soon to be, eventual one stop place for managing your sports team.
-  </h1>
+    <h1>
+      Welcome to sportsMGR,<br>
+      your soon to be, eventual one stop place<br>
+      for managing your sports team.</h1>
+  </div>
   </div>
 <% else %>
+  <div id="app">
+    <h1>Dashboard</h2>
+    <div class="sport-contain">
+      <div class="sports" v-for="sport in sports">
+        <dash :sport="sport">
+          <h2>{{ sport.name }}</h2>
+        </dash>
+      </div>
+    </div>
+  </div>
 
-<div id="app">
-<h1>Dashboard</h2>
-<div class="sport-contain">
-<div class="sports" v-for="sport in sports">
-  <dash :sport="sport">
-    <h2>{{ sport.name }}</h2>
-  </dash>
-</div>
-</div>
-</div>
-
-<script type="text/x-template" id="dash">
-<div class="dash">
-<img :src="sport.img" width="235" height="300"/>
-<slot></slot>
-<p>{{ sport.desc }}</p>
-<a :href="sport.path">Click Here</a>
-</div>
-</script>
-<script src="https://unpkg.com/vue@2.4.2"></script>
-<%= javascript_pack_tag 'application' %>
+  <script type="text/x-template" id="dash">
+    <div class="dash">
+      <img :src="sport.img" width="235" height="300"/>
+      <slot></slot>
+      <p>{{ sport.desc }}</p>
+      <a :href="sport.path">Click Here</a>
+    </div>
+  </script>
+  <script src="https://unpkg.com/vue@2.4.2"></script>
+  <%= javascript_pack_tag 'application' %>
 
 <% end %>
