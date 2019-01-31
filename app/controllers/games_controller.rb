@@ -38,6 +38,14 @@ class GamesController < ApplicationController
         end
     end
 
+    def destroy
+      @game = Game.find(params[:id])
+      respond_to do |format|
+      format.js
+    end
+    @game.destroy
+    end
+
   private
 
   def game_params

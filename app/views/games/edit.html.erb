@@ -1,6 +1,8 @@
 <div>
-  <h1>Create A New Game</h1>
-
+  <br><h1>Edit Game</h1><br>
+  <div class="grid-container">
+    <div></div>
+    <div class="card container" align="center">
   <%= form_for(@game) do |g|%>
     <h3>Game Name:</h3>
     <%= g.text_field :name, placeholder: "Game Name" %><br>
@@ -13,8 +15,11 @@
 
     <h3>Opposing Team Score:</h3>
     <%= g.number_field :visitor_score %><br>
-    <%= g.submit 'Create Game' %>
-
-    <% end %>
-
+<br>
+    <%= g.submit 'Submit Game Edit' %><br>
+    <br>
 </div>
+<div></div>
+</div>
+</div>
+<% end %>

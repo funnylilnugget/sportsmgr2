@@ -1,6 +1,8 @@
 <div>
-  <h1>Create A New Game</h1>
-
+  <br><h1>Create A New Game</h1><br>
+  <div class="grid-container">
+    <div></div>
+    <div class="card container" align="center">
   <%= form_for(@game) do |g|%>
     <h3>Game Name:</h3>
     <%= g.text_field :name, placeholder: "Game Name" %><br>
@@ -9,9 +11,12 @@
     <%= g.date_field :game_date %><br>
 
     <h3>Team:</h3>
-    <%= g.collection_select(:teams, Team.all, :id, :name) %>
-
-    <%= g.submit 'Create Game' %>
-
-  <% end %>
+    <%= g.collection_select(:teams, Team.all, :id, :name) %><br>
+<br>
+    <%= g.submit 'Create Game' %><br>
+    <br>
 </div>
+<div></div>
+</div>
+</div>
+<% end %>

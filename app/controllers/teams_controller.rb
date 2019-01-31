@@ -8,15 +8,27 @@ class TeamsController < ApplicationController
   end
 
   def edit
+    if logged_in?
     @team = Team.find(params[:id])
+  else
+    redirect_to root_path
+    end
   end
 
   def show
+    if logged_in?
     @team = Team.find(params[:id])
+  else
+    redirect_to root_path
+    end
   end
 
   def new
+    if logged_in?
     @team = Team.new
+  else
+    redirect_to root_path
+    end
   end
 
   def create

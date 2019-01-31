@@ -8,15 +8,27 @@ class PlayersController < ApplicationController
 end
 
   def edit
+    if logged_in?
     @player = Player.find(params[:id])
+  else
+    redirect_to root_path
+  end
   end
 
   def show
+    if logged_in?
     @player = Player.find(params[:id])
+  else
+    redirect_to root_path
+  end
   end
 
   def new
+    if logged_in?
     @player = Player.new
+  else
+    redirect_to root_path
+  end
   end
 
   def create

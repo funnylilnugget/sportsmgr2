@@ -1,4 +1,5 @@
-<%= link_to "Create Game", new_game_path%><br>
+<br>
+<center><%= link_to "Create Game", new_game_path%></center><br>
 
 <h2>Game List</h2>
 <br>
@@ -17,8 +18,8 @@
         <td><%= g.game_date %></td>
         <td><center><%= g.home_score %></center></td>
         <td><center><%= g.visitor_score %></center></td>
-        <td><a href="/games/<%= g.id %>/edit">Edit</a></td>
-        <td><%= link_to "Delete", player_path(g.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <td><a href="/games/<%= g.id %>/edit"><img src="/assets/edit-button.png"></a></td>
+        <td><%= link_to "Delete", game_path(g.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
           </tr>
         <% end %>
       </table>
