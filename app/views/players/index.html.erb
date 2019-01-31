@@ -1,4 +1,6 @@
-<%= link_to "Create Player", new_player_path %><br>
+<br>
+
+<center><%= link_to "Create Player", new_player_path %></center><br>
 
 <h2>Player List</h2>
 <br>
@@ -13,7 +15,7 @@
       <tr id="<%=p.id%>">
         <td><%= p.first_name %></td>
         <td><%= p.last_name %></td>
-        <td><a href="/players/<%= p.id %>/edit">Edit</a></td>
+        <td><a href="/players/<%= p.id %>/edit"><img src="/assets/edit-button.png"></a></td>
         <td><%= link_to "Delete", player_path(p.id), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %></td>
           </tr>
         <% end %>

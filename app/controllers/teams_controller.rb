@@ -36,6 +36,14 @@ class TeamsController < ApplicationController
         end
     end
 
+    def destroy
+      @team = Team.find(params[:id])
+      respond_to do |format|
+      format.js
+    end
+    @team.destroy
+    end
+
   private
 
   def team_params

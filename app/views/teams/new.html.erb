@@ -1,14 +1,19 @@
 <div>
-  <h1>Create Team</h1>
-
+  <br><h1>Create Team</h1><br>
+  <div class="grid-container">
+    <div></div>
+    <div class="card container" align="center">
   <%= form_for(@team) do |t|%>
     <h3>Team Name:</h3>
     <%= t.text_field :name, placeholder: "Team Name" %><br><br>
 
     <h3>Assign Players</h3>
-    <%= t.collection_check_boxes :player_ids, Player.all, :id, :first_name, {}, { multiple: true} %>
+    <%= t.collection_check_boxes :player_ids, Player.all, :id, :first_name, {}, { multiple: true} %><br><br>
 
-    <%= t.submit 'Sign Up' %>
-
-  <% end %>
+    <%= t.submit 'Sign Up' %><br>
+    <br>
 </div>
+<div></div>
+</div>
+</div>
+<% end %>
