@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  belongs_to :games, optional: true
+  belongs_to :games
   has_and_belongs_to_many :players
 
 end
